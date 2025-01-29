@@ -75,11 +75,13 @@ const Partners = () => {
           >
             <div className="p-5">
               {/* Partner Image */}
-              <img
-                src={partner.image}
-                alt={partner.name}
-                className="w-full h-40 object-cover rounded-t-lg mb-4"
-              />
+              <div className="relative w-full h-40 overflow-hidden rounded-t-lg mb-4">
+                <img
+                  src={partner.image}
+                  alt={partner.name}
+                  className="w-full h-full object-cover" // Ensures full cover and no distortion
+                />
+              </div>
               <h3 className="text-xl font-semibold text-black">{partner.name}</h3>
               <p className="text-sm text-gray-600">{partner.country}</p>
               <p className="mt-3 text-gray-800">{partner.description}</p>
