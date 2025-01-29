@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import { motion } from 'framer-motion'; // Import motion
-import { FaTimes } from 'react-icons/fa'; // Import Close icon
+import { motion } from 'framer-motion'; 
+import { FaTimes } from 'react-icons/fa';
 
 const Projects = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null); // Manage expanded state
+
   const projects = [
     {
       name: 'CNPC, USA',
@@ -80,10 +80,12 @@ const Projects = () => {
     }
   ];
 
-  const handleExpand = (index) => {
-    setExpandedIndex(index === expandedIndex ? null : index); // Toggle expanded state
-  };
+  const [expandedIndex, setExpandedIndex] = useState(null); // Manage expanded state
 
+  const handleExpand = (index) => {
+    setExpandedIndex(index); // Open the modal without expanding the card
+  };
+  
   return (
     <div className="min-h-screen relative">
       {/* Heading with Framer Motion animation */}
@@ -98,43 +100,45 @@ const Projects = () => {
           <span className="text-blue-500"> Projects</span>
         </motion.h1>
       </div>
-
+  
       {/* Project List */}
       <div className="flex flex-wrap justify-center gap-6 px-6 py-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs bg-white rounded-lg shadow-lg overflow-hidden border transform transition-all duration-300 ease-in-out ${expandedIndex === index ? 'opacity-0' : ''}`} // Hide cards when expanded
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            style={{
-              height: expandedIndex === index ? 'auto' : '300px', // Fixed height when not expanded
-            }}
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs bg-white rounded-lg shadow-lg overflow-hidden border"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: 'spring', // Spring-based transition for bouncing effect
+        stiffness: 200, // Spring stiffness
+        damping: 12, // Damping factor
+        delay: index * 0.2, // Delay based on index
+      }}
+      whileHover={{ scale: 1.05 }}
+    >
+      <div className="p-6 space-y-4 overflow-hidden">
+        <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
+        <p className="text-sm text-gray-500">{project.country}</p>
+        <p className="mt-3 text-gray-700 whitespace-pre-line line-clamp-2">
+          {project.description}
+        </p>
+        {expandedIndex !== index && (
+          <button
+            onClick={() => handleExpand(index)}
+            className="mt-4 inline-block text-blue-500 hover:text-blue-700 transition duration-200"
           >
-            <div className="p-6 space-y-4 overflow-hidden">
-              <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
-              <p className="text-sm text-gray-500">{project.country}</p>
-              <p className={`mt-3 text-gray-700 whitespace-pre-line ${expandedIndex === index ? '' : 'line-clamp-2'}`}>
-                {expandedIndex === index
-                  ? project.description
-                  : project.description.split('\n')[0] + '\n' + project.description.split('\n')[1] + '...'
-                }
-              </p>
-              {expandedIndex !== index && (
-                <button
-                  onClick={() => handleExpand(index)}
-                  className="mt-4 inline-block text-blue-500 hover:text-blue-700 transition duration-200"
-                >
-                  Read More
-                </button>
-              )}
-            </div>
-          </motion.div>
-        ))}
+            Read More
+          </button>
+        )}
       </div>
+    </motion.div>
+  ))}
+</div>
 
-      {/* Expanded Modal View with Card Expansion Animation */}
+
+  
+      {/* Expanded Modal View */}
       {expandedIndex !== null && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-20 flex justify-center items-center">
           <motion.div
@@ -149,7 +153,7 @@ const Projects = () => {
                 <FaTimes size={24} />
               </button>
             </div>
-
+  
             {/* Modal Content */}
             <h3 className="text-3xl font-semibold text-gray-800">{projects[expandedIndex].name}</h3>
             <p className="text-lg text-gray-500">{projects[expandedIndex].country}</p>
@@ -169,6 +173,7 @@ const Projects = () => {
       )}
     </div>
   );
+  
 };
 
 export default Projects;

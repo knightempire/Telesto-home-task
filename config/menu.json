@@ -27,8 +27,8 @@
                     "url": "/teams"
                 },
                 {
-                    "text": "Quick Start",
-                    "url": "#"
+                    "text": "About",
+                    "url": "/about"
                 }
             ]
         },
@@ -38,21 +38,23 @@
                     "text": "Features",
                     "url": "#"
                 },
+             {
+                    "text": "Partners",
+                    "url": "/partners"
+                },
                 {
                     "text": "Platform",
                     "url": "#"
-                },
-                {
-                    "text": "Team",
-                    "url": "/teams"
                 }
+          
             ]
         },
         {
             "name": "Support",
-            "menu": [{
-                    "text": "Partners",
-                    "url": "/Partners"
+            "menu": [
+                {
+                    "text": "Team",
+                    "url": "/teams"
                 },
                 {
                     "text": "Privacy Policy",
