@@ -108,8 +108,11 @@ const Projects = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
+            style={{
+              height: expandedIndex === index ? 'auto' : '300px', // Fixed height when not expanded
+            }}
           >
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-4 overflow-hidden">
               <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
               <p className="text-sm text-gray-500">{project.country}</p>
               <p className={`mt-3 text-gray-700 whitespace-pre-line ${expandedIndex === index ? '' : 'line-clamp-2'}`}>
@@ -169,4 +172,3 @@ const Projects = () => {
 };
 
 export default Projects;
-  
