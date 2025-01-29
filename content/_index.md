@@ -80,13 +80,5 @@ workflow:
   image: "/images/banner.svg"
   description: ""
 
-# call_to_action
-call_to_action:
-  title: Ready to get started?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
-  image: '/images/cta.svg'
-  button:
-    enable: true
-    label: "Contact Us"
-    link: "/contact"
+
 ---
