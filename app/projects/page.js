@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'; // Import motion
-import { FaTimes } from 'react-icons/fa'; // 
-
+import { FaTimes } from 'react-icons/fa'; // Import Close icon
 
 const Projects = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null); 
+  const [expandedIndex, setExpandedIndex] = useState(null); // Manage expanded state
   const projects = [
     {
       name: 'CNPC, USA',
@@ -132,13 +131,13 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Expanded Modal View */}
+      {/* Expanded Modal View with Card Expansion Animation */}
       {expandedIndex !== null && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-20 flex justify-center items-center">
           <motion.div
             className="relative w-full lg:w-2/3 max-w-4xl bg-white rounded-lg overflow-hidden p-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
             {/* Close Button */}
@@ -168,4 +167,5 @@ const Projects = () => {
     </div>
   );
 };
+
 export default Projects;
