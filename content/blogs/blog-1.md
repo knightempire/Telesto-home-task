@@ -9,6 +9,8 @@ draft: false
 ## Heading 
 Compressional to Shear Velocity ratio (Vp/Vs ratio) and its importance in formation evaluation and reservoir characterization in sandstone reservoirs
 
+
+
 ###### Authors: Amit Ray and Rajeshwaran Dandapani
 
 ---

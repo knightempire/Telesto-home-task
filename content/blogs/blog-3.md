@@ -1,7 +1,7 @@
 ---
 title: "Vp/Vs ratio  and it’s  importance  in sandstone reservoir characterization"
 description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
-image: "https://i.imgur.com/0eLlGp7.png"
+image: "https://i.imgur.com/0eLlGp7.png" 
 date: 2022-08-04T05:00:00Z
 draft: false
 ---
