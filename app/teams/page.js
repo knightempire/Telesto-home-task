@@ -30,7 +30,7 @@ const Team = () => {
   const [activeCategory, setActiveCategory] = useState('advisors');
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       {/* Heading with Framer Motion animation */}
       <div className="flex items-start justify-center py-16">
         <motion.h1
@@ -69,7 +69,7 @@ const Team = () => {
       </div>
 
       {/* Team Members Cards */}
-      <div className="flex flex-wrap justify-center gap-8 px-6">
+      <div className="flex flex-wrap justify-center gap-8 px-6 py-8">
         {teamMembers[activeCategory].map((member, index) => (
           <div key={index} className="group flex w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
             <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href={member.link}>
