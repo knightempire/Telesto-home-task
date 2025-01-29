@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Bigspring Light Nextjs",
+    "title": "Telesto Energy",
     "base_url": "/",
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "https://i.imgur.com/8PaHY7T.png",
+    "logo": "https://i.imgur.com/zryQGPo.png",
     "logo_width": "200",
     "logo_height": "48",
-    "logo_text": "Bigspring Light"
+    "logo_text": "Telesto Energy"
   },
 
   "settings": {
@@ -24,13 +24,13 @@
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+    "footer_content": "Committed to quality, innovation, and exceptional service. Thank you for choosing us!",
+    "copyright": "Designed and Developed By [Abinesh](https://github.com/knightempire)"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Abinesh",
     "meta_image": "",
-    "meta_description": "A SAAS template for nextjs"
+    "meta_description": "Abinesh || Web Developer || Knight Empire"
   }
 }
