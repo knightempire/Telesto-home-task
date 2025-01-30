@@ -27,8 +27,8 @@ const Services = () => {
     {
       title: "Our Mission",
       content:
-        "To become a company of choice that create value to all stakeholders through innovation and technology",
-      images: ["/images/service-slide-1.png"],
+        "To become the company of choice by creating sustainable value for all stakeholders through continuous innovation and advanced technology. We are committed to transforming the energy landscape by delivering data-driven solutions, fostering strategic partnerships, and promoting operational excellence while maintaining a strong focus on environmental responsibility and community development",
+      images: ["/images/mission.svg"],
       button: {
         enable: true,
         label: "Check it out",
@@ -57,7 +57,18 @@ const Services = () => {
         link: "/contact",
       },
     },
-
+    {
+      title: "A company standing different from others",
+      content:"Telesto Energy combines advanced technology and deep industry expertise to redefine operational efficiency in oil and gas. With a focus on AI-driven insights and sustainable strategies, Telesto empowers businesses to optimize their assets, enhance decision-making, and unlock untapped value across their energy portfolio." ,
+       images: [
+      "https://i.imgur.com/8PaHY7T.png"
+      ],
+      button: {
+        enable: true,
+        label: "Check it out",
+        link: "/contact",
+      },
+    },
   ];
 
   return services.map((service, index) => {
@@ -88,7 +99,7 @@ const Services = () => {
                     <Image
                       src={slide}
                       alt="Service Image"
-                      width={slide === "https://i.imgur.com/8PaHY7T.png" ? 300 : 600}  // Reduced size for the specific image
+                      width={slide === "https://i.imgur.com/8PaHY7T.png" ? 300 : 500}  // Reduced size for the specific image
                       height={slide === "https://i.imgur.com/8PaHY7T.png" ? 250 : 500} // Adjust height accordingly                
                     />
                   </SwiperSlide>
