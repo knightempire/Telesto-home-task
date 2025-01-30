@@ -59,12 +59,9 @@ const Services = () => {
     },
     {
       title: "A company standing different from others",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat.",
-      images: [
-        "/images/service-slide-1.png",
-        "/images/service-slide-2.png",
-        "/images/service-slide-3.png",
+      content:"Telesto Energy combines advanced technology and deep industry expertise to redefine operational efficiency in oil and gas. With a focus on AI-driven insights and sustainable strategies, Telesto empowers businesses to optimize their assets, enhance decision-making, and unlock untapped value across their energy portfolio." ,
+       images: [
+      "https://i.imgur.com/8PaHY7T.png"
       ],
       button: {
         enable: true,
@@ -102,8 +99,8 @@ const Services = () => {
                     <Image
                       src={slide}
                       alt="Service Image"
-                      width={600}
-                      height={500}
+                      width={slide === "https://i.imgur.com/8PaHY7T.png" ? 300 : 600}  // Reduced size for the specific image
+                      height={slide === "https://i.imgur.com/8PaHY7T.png" ? 250 : 500} // Adjust height accordingly                
                     />
                   </SwiperSlide>
                 ))}
