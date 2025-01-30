@@ -10,7 +10,7 @@ banner:
 # Feature Section Update
 
 feature: 
-  title: Something You Need To Know
+  title:  Telesto Energy could emphasize
   features:
   - name: "AI & Data Analytics"
     icon: "/images/data-analytics.svg"
