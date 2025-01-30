@@ -57,18 +57,7 @@ const Services = () => {
         link: "/contact",
       },
     },
-    {
-      title: "A company standing different from others",
-      content:"Telesto Energy combines advanced technology and deep industry expertise to redefine operational efficiency in oil and gas. With a focus on AI-driven insights and sustainable strategies, Telesto empowers businesses to optimize their assets, enhance decision-making, and unlock untapped value across their energy portfolio." ,
-       images: [
-      "https://i.imgur.com/8PaHY7T.png"
-      ],
-      button: {
-        enable: true,
-        label: "Check it out",
-        link: "/contact",
-      },
-    },
+
   ];
 
   return services.map((service, index) => {
