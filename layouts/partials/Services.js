@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
+import { motion } from "framer-motion";  // Import framer-motion
 
 const Services = () => {
   // Hardcoding the services data inside the component file
@@ -59,10 +60,9 @@ const Services = () => {
     },
     {
       title: "A company standing different from others",
-      content:"Telesto Energy combines advanced technology and deep industry expertise to redefine operational efficiency in oil and gas. With a focus on AI-driven insights and sustainable strategies, Telesto empowers businesses to optimize their assets, enhance decision-making, and unlock untapped value across their energy portfolio." ,
-       images: [
-      "https://i.imgur.com/8PaHY7T.png"
-      ],
+      content:
+        "Telesto Energy combines advanced technology and deep industry expertise to redefine operational efficiency in oil and gas. With a focus on AI-driven insights and sustainable strategies, Telesto empowers businesses to optimize their assets, enhance decision-making, and unlock untapped value across their energy portfolio.",
+      images: ["https://i.imgur.com/8PaHY7T.png"],
       button: {
         enable: true,
         label: "Check it out",
@@ -81,12 +81,16 @@ const Services = () => {
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
             {/* Carousel */}
-            <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
+            <motion.div
+              className={`service-carousel ${!isOdd && "md:order-2"}`}
+              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              viewport={{ once: true, amount: 0.2 }} // Trigger animation once it comes into view
+              transition={{ duration: 1 }}
+            >
               <Swiper
                 modules={[Autoplay, Pagination]}
-                pagination={
-                  service.images.length > 1 ? { clickable: true } : false
-                }
+                pagination={service.images.length > 1 ? { clickable: true } : false}
                 autoplay={{
                   delay: 5000,
                   disableOnInteraction: false,
@@ -100,16 +104,20 @@ const Services = () => {
                       src={slide}
                       alt="Service Image"
                       width={slide === "https://i.imgur.com/8PaHY7T.png" ? 300 : 500}  // Reduced size for the specific image
-                      height={slide === "https://i.imgur.com/8PaHY7T.png" ? 250 : 500} // Adjust height accordingly                
+                      height={slide === "https://i.imgur.com/8PaHY7T.png" ? 250 : 500} // Adjust height accordingly
                     />
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </motion.div>
 
             {/* Content */}
-            <div
+            <motion.div
               className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"}`}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              viewport={{ once: true, amount: 0.2 }} // Trigger animation once it comes into view
+              transition={{ duration: 1, delay: 0.2 }}
             >
               <h2 className="font-bold leading-[40px]">{service?.title}</h2>
               <p className="mb-2 mt-4">{service?.content}</p>
@@ -148,7 +156,7 @@ const Services = () => {
                   />
                 </Link>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
